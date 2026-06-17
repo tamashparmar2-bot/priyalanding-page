@@ -1,51 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ==========================================================================
-     1. CUSTOM CURSOR (LERPED SMOOTH MOTION)
-     ========================================================================== */
-  const cursor = document.getElementById('custom-cursor');
-  const cursorDot = document.getElementById('custom-cursor-dot');
-  
-  let mouseX = 0, mouseY = 0; // Actual mouse position
-  let cursorX = 0, cursorY = 0; // Lerped cursor circle position
-  
-  // Update mouse position coordinates
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    
-    // Dot moves instantly
-    cursorDot.style.left = `${mouseX}px`;
-    cursorDot.style.top = `${mouseY}px`;
-  });
-  
-  // Smooth animation loop for the outer cursor ring (linear interpolation / lerp)
-  function animateCursor() {
-    // 0.15 is the easing factor (smaller = smoother/slower cursor ring tracking)
-    cursorX += (mouseX - cursorX) * 0.15;
-    cursorY += (mouseY - cursorY) * 0.15;
-    
-    cursor.style.left = `${cursorX}px`;
-    cursor.style.top = `${cursorY}px`;
-    
-    requestAnimationFrame(animateCursor);
-  }
-  requestAnimationFrame(animateCursor);
-
-  // Hover states for interactive elements
-  const hoverElements = document.querySelectorAll('a, button, .gallery-item, input, select, textarea, .nav-toggle');
-  
-  hoverElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.classList.add('hovered');
-      cursorDot.classList.add('hovered');
-    });
-    
-    el.addEventListener('mouseleave', () => {
-      cursor.classList.remove('hovered');
-      cursorDot.classList.remove('hovered');
-    });
-  });
 
   /* ==========================================================================
      2. NAVIGATION MENU TOGGLE

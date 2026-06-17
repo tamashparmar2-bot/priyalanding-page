@@ -133,52 +133,6 @@ p {
   font-style: italic;
 }
 
-/* Custom Luxury Cursor */
-.custom-cursor {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--color-gold);
-  border-radius: 50%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 9999;
-  transition: var(--cursor-transition);
-  mix-blend-mode: difference;
-}
-
-.custom-cursor-dot {
-  width: 6px;
-  height: 6px;
-  background-color: var(--color-saffron);
-  border-radius: 50%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 9999;
-  transition: width 0.3s, height 0.3s, background-color 0.3s;
-}
-
-/* Hover effects for cursor */
-.custom-cursor.hovered {
-  width: 60px;
-  height: 60px;
-  border-color: var(--color-saffron);
-  background-color: rgba(200, 90, 23, 0.05);
-}
-
-.custom-cursor-dot.hovered {
-  width: 10px;
-  height: 10px;
-  background-color: var(--color-gold);
-}
-
-/* Hide native cursor on devices that support hover */
-@media (hover: hover) and (pointer: fine) {
-  body, a, button, input, select, textarea, .gallery-item {
-    cursor: none;
-  }
-}
 
 /* Header & Navigation Styles */
 .luxury-header {
@@ -877,6 +831,11 @@ p {
   font-family: var(--font-serif);
   color: var(--color-charcoal);
   margin-bottom: 0.3rem;
+}
+
+.phone-number {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700; /* Bold */
 }
 
 .social-links {
